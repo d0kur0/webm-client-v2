@@ -1,0 +1,30 @@
+<script>
+	import Router from "svelte-spa-router";
+
+	import Navbar from "/components/Navbar.svelte";
+
+	import IndexPage from "/pages/Index.svelte";
+	import SettingsPage from "/pages/Settings.svelte";
+	import DisclaimerPage from "/pages/Disclaimer.svelte";
+	import NotFoundPage from "/pages/NotFound.svelte";
+
+	const routes = {
+		"/": IndexPage,
+		"/settings": SettingsPage,
+		"/disclaimer": DisclaimerPage,
+		"*": NotFoundPage,
+	}
+</script>
+
+<template>
+	<Navbar />
+
+	<Router {routes} />
+</template>
+
+<style global lang="scss">
+	@import "./styles/base.scss";
+	@import "./styles/colors.scss";
+	@import "./styles/navbar.scss";
+	@import "./styles/button.scss";
+</style>
