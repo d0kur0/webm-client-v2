@@ -1,0 +1,17 @@
+.checkbox-list {
+  background-color: var(--wrapper-color);
+
+  &__header {
+    padding: 15px 20px;
+    font-weight: bolder;
+  }
+
+  &__item {
+    padding: 15px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  }
+}

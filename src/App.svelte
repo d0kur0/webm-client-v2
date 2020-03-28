@@ -27,4 +27,5 @@
 	@import "./styles/colors.scss";
 	@import "./styles/navbar.scss";
 	@import "./styles/button.scss";
+	@import "./styles/checkbox-list.scss";
 </style>

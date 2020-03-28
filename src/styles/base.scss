@@ -6,4 +6,11 @@ body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
   min-width: 320px;
+  background-color: var(--background-color);
+  color: var(--main-color);
+}
+
+.page-wrapper {
+  max-width: 600px;
+  margin: auto;
 }

@@ -1,25 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
-  background-color: var(--navbar-background);
-  color: var(--navbar-color);
   padding: 0 20px;
-  height: 50px;
-  box-shadow: var(--navbar-bottom-shadow);
-
-  &__pull-left {
-    margin-right: auto;
-  }
-
-  &__pull-right {
-    margin-left: auto;
-  }
-
-  &__pull-left,
-  &__pull-right {
-    display: flex;
-    align-items: center;
-  }
+  height: 60px;
 
   &__video-name {
     font-size: 1.2em;
