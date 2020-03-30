@@ -1,6 +1,6 @@
 .button {
+  color: var(--button-color);
   cursor: pointer;
-  color: var(--ancent-color);
   transition: 0.3s;
   border: none;
   font: inherit;
@@ -12,10 +12,13 @@
 
   &:hover {
     background-color: var(--ancent-color-dark);
+    color: var(--button-hover-color);
   }
 
-  &:focus {
+  &:focus,
+  &:active {
     outline: none;
+    color: var(--button-active-color);
   }
 }
 
