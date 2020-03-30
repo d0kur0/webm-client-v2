@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edad9d7a-b8f4-44e2-9603-e36f65be4bf0" name="Default Changelist" comment="" />
+    <list default="true" id="edad9d7a-b8f4-44e2-9603-e36f65be4bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webm-client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Index.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/checkbox-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/checkbox-list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1YoC8s3RrQO1xfWdMMwz8M5ZRXS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -19,6 +46,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,10 +61,25 @@
       <workItem from="1583599405142" duration="564000" />
       <workItem from="1583621226326" duration="825000" />
       <workItem from="1583706531848" duration="213000" />
+      <workItem from="1585391564888" duration="309000" />
+      <workItem from="1585391893428" duration="37000" />
+      <workItem from="1585391938129" duration="1851000" />
+      <workItem from="1585455032738" duration="3274000" />
+      <workItem from="1585539001464" duration="7871000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="183" key="#JavaScript" timestamp="1585539620866">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="183" key="#JavaScript/0.0.1920.1050@0.0.1920.1050" timestamp="1585539620866" />
+    <state x="609" y="157" key="SettingsEditor" timestamp="1585455154295">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="609" y="157" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1585455154295" />
   </component>
 </project>
