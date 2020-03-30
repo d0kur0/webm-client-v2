@@ -4,4 +4,29 @@ body {
   --wrapper-color: #1a1b1e;
   --focus-color: #3f3f42;
   --hover-color: #232427;
+  --input-border-color: rgba(204, 204, 204, 0.56);
+  --border-devider-color: rgba(48, 48, 48, 0.36);
+  --ancent-color: rgba(255, 35, 206, 0.76);
+
+  --button-color: #f2f2f2;
+  --button-hover-color: #bfbfbf;
+  --button-active-color: #bea8ae;
+  --spinner-color: rgba(255, 35, 206, 0.76);
 }
+
+/** TODO: DARK THEME
+body {
+    --background-color: #f3f3f3;
+    --main-color: #4a4a4a;
+    --wrapper-color: #e8e8e8;
+    --focus-color: #cecece;
+    --hover-color: #d6d6d6;
+    --input-border-color: rgba(204, 204, 204, 0.56);
+    --border-devider-color: rgba(146, 146, 146, 0.36);
+    --ancent-color: rgba(121, 56, 107, 0.76);
+    --button-color: #545454;
+    --button-hover-color: #2f2f2f;
+    --button-active-color: #63595b;
+    --spinner-color: rgba(255, 35, 206, 0.76);
+}
+ */
