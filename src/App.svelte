@@ -1,5 +1,7 @@
 <script>
 	import Router from "svelte-spa-router";
+	import { theme } from "/stores/theme.js";
+	import { onMount } from "svelte";
 
 	import IndexPage from "/pages/Index.svelte";
 	import SettingsPage from "/pages/Settings.svelte";
@@ -11,7 +13,11 @@
 		"/settings": SettingsPage,
 		"/disclaimer": DisclaimerPage,
 		"*": NotFoundPage,
-	}
+	};
+
+	onMount(() => {
+		document.body.classList.toggle("dark", !$theme);
+	});
 </script>
 
 <template>
