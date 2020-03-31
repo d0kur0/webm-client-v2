@@ -21,7 +21,7 @@
           <div class="checkbox-list__items">
             {#each vendor.boards as board}
               <label class="checkbox-item">
-                <input class="checkbox-item__input" checked type="checkbox">
+                <input checked={board.checked} on:change="{() => schema.toggleCheckedOfBoard(vendor.name, board.name)}" class="checkbox-item__input" type="checkbox">
                 <span class="checkbox-item__flag"></span>
 
                 <span class="checkbox-item__label">
@@ -35,3 +35,10 @@
     </div>
   </div>
 </template>
+
+<style>
+  h3 {
+    margin: 0;
+    padding-bottom: 15px;
+  }
+</style>
