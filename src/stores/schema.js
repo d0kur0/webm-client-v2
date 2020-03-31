@@ -57,7 +57,6 @@ function createSchema() {
 
 					const boards = vendor.boards.map(board => {
 						if (board.name !== boardName) return board;
-						console.log("change", board);
 						return { ...board, checked: !board.checked }
 					});
 
