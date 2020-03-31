@@ -14,19 +14,25 @@ body {
   --spinner-color: rgba(255, 35, 206, 0.76);
 }
 
-/** TODO: DARK THEME
-body {
+body.dark {
     --background-color: #f3f3f3;
     --main-color: #4a4a4a;
     --wrapper-color: #e8e8e8;
     --focus-color: #cecece;
     --hover-color: #d6d6d6;
-    --input-border-color: rgba(204, 204, 204, 0.56);
+    --input-border-color: rgba(123, 123, 123, 0.56);
     --border-devider-color: rgba(146, 146, 146, 0.36);
-    --ancent-color: rgba(121, 56, 107, 0.76);
+    --ancent-color: rgb(232, 139, 0);
     --button-color: #545454;
     --button-hover-color: #2f2f2f;
     --button-active-color: #63595b;
     --spinner-color: rgba(255, 35, 206, 0.76);
 }
- */
+
+.transition {
+  transition: 0.5s !important;
+}
+
+.transition * {
+  transition: 0s !important;
+}
