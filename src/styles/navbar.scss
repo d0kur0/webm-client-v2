@@ -1,8 +1,31 @@
+.navbar-top-margin {
+  height: 60px;
+}
+
 .navbar {
+  background-color: var(--background-color);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   padding: 0 20px;
   height: 60px;
+
+  &__pull-left,
+  &__pull-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__pull-left {
+    margin-right: auto;
+  }
+
+  &__pull-right {
+    margin-left: auto;
+  }
 
   &__video-name {
     font-size: 1.2em;
