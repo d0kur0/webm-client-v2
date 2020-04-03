@@ -15,9 +15,7 @@
 		"*": NotFoundPage,
 	};
 
-	onMount(() => {
-		document.body.classList.toggle("dark", !$theme);
-	});
+	onMount(() => document.body.classList.toggle("dark", !$theme));
 </script>
 
 <template>
