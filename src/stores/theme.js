@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 
-function createTheme() {
+// Store factory
+const createStore = () => {
 	const { subscribe, set, update } = writable(true, function start (set) {
 
 		const isDark = localStorage.overrideTheme !== undefined
@@ -9,15 +10,13 @@ function createTheme() {
 
 		set(Boolean(isDark));
 
-		return function stop () {}
+		return () => {};
 	});
 
 	return {
 		subscribe,
-		toggleTheme () {
-			update(theme => !theme);
-		}
+		toggleTheme: () => update(theme => !theme)
 	};
-}
+};
 
-export const theme = createTheme();
+export const theme = createStore();
