@@ -1,6 +1,13 @@
 import axios from "axios";
 
-function unpackFiles (vendors) {
+// Make base API instance for requests
+const API = axios.create({
+	baseURL: "http://5.180.138.37:3500/",
+	responseType: "json"
+});
+
+// Unpack layered object to flat array
+const unpackFiles = vendors => {
 	const files = [];
 
 	for (const vendor in vendors) {
@@ -15,43 +22,33 @@ function unpackFiles (vendors) {
 		}
 	}
 
-	console.log(files)
-
 	return files;
-}
+};
 
-function createAPI () {
-	const transport = axios.create({
-		baseURL: "http://5.180.138.37:3500/",
-		responseType: "json"
-	});
+// Requesting files by schema, return files array
+export const getFilesBySchema = async (inputSchema) => {
+	const schema = { vendors: {} };
+	inputSchema.forEach(vendor => schema.vendors[vendor.name] = vendor.boards.map(board => board.name));
 
-	return {
-		async getFilesBySchema (inputSchema) {
-			const schema = { vendors: {} };
-			inputSchema.forEach(vendor => schema.vendors[vendor.name] = vendor.boards.map(board => board.name));
+	const { data } = await API.post("files/getByStruct", JSON.stringify(schema));
 
-			const { data } = await transport.post("files/getByStruct", JSON.stringify(schema));
+	return unpackFiles(data.vendors);
+};
 
-			return unpackFiles(data.vendors);
-		},
+// Requesting server schema of grabbing
+export const getSchema = async () => {
+	const { data } = await API.get("schema/get");
+	const schemaArray = [];
 
-		async getSchema () {
-			const { data } = await transport.get("schema/get");
-			const schemaArray = [];
+	for (let vendor in data) {
+		if (!data.hasOwnProperty(vendor)) continue;
 
-			for (let vendor in data) {
-				if (!data.hasOwnProperty(vendor)) continue;
-
-				schemaArray.push({
-					name: vendor,
-					boards: data[vendor]
-				});
-			}
-
-			return Promise.resolve(schemaArray);
-		}
+		schemaArray.push({
+			name: vendor,
+			boards: data[vendor]
+		});
 	}
-}
 
-export default createAPI();
+	return Promise.resolve(schemaArray);
+};
+
