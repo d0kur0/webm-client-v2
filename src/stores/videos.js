@@ -1,20 +1,32 @@
 import { writable } from "svelte/store";
-import API from "/Api.js";
+import { getFilesBySchema } from "/Api.js";
 
-const { getFilesBySchema } = API;
+// Default data struct
+const stateStruct = {
+	currentIndex: 0,
+	files: []
+};
 
-function createVideos() {
-	const { subscribe, set, update } = writable({
-		currentIndex: 0,
-		files: []
-	});
+// Randomize array elements
+const shuffleArray = array => {
+	const { random } = Math;
+
+	return array.sort(() => random() - 0.5);
+};
+
+// Make store
+const createStore = () => {
+	const { subscribe, set, update } = writable({ ...stateStruct });
 
 	return {
 		subscribe,
-		async fetchBySchema (schema) {
-			set(await getFilesBySchema(schema));
-		}
-	};
-}
 
-export const videos = createVideos();
+		// Requesting files by schema
+		async fetchBySchema (schema) {
+			const files = await getFilesBySchema(schema) || [];
+			return update(oldState => ({ ...oldState, files }));
+		}
+	}
+};
+
+export const videos = createStore();
