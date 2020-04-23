@@ -29,6 +29,11 @@ body.dark {
     --spinner-color: rgba(255, 35, 206, 0.76);
 }
 
+/* fix for artifacts with toggle theme */
+.transition nav {
+  background-color: transparent;
+}
+
 .transition {
   transition: 0.5s !important;
 }
