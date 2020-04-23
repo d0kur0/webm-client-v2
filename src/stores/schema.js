@@ -1,18 +1,17 @@
 import { writable } from "svelte/store";
-import API from "/Api.js";
+import { getSchema } from "/Api.js";
 
-const { getSchema } = API;
-
-function addCheckedPropertyForBoards (schema) {
+// Add checked property for boards
+const addCheckedPropertyForBoards = schema => {
 	return schema.map(vendor => {
-		return {
-			...vendor,
-			boards: vendor.boards.map(board => ({ ...board, checked: true }))
-		}
-	});
-}
+		const boards = vendor.boards.map(board => ({ ...board, checked: true }));
 
-function getLocalSchema () {
+		return { ...vendor, boards }
+	});
+};
+
+// Get schema from localStorage
+const getLocalSchema = () => {
 	if (localStorage.localSchema === undefined) return false;
 
 	try {
@@ -22,35 +21,33 @@ function getLocalSchema () {
 		console.error(e);
 		return false;
 	}
-}
+};
 
-function setLocalSchema (schema) {
-	try {
-		localStorage.localSchema = JSON.stringify(schema);
-	} catch (e) {
-		console.error(e);
-	}
-}
+// Save schema in localStorage
+const setLocalSchema = schema => {
+	localStorage.localSchema = JSON.stringify(schema);
+};
 
-function createSchema() {
+// Fabric of store
+const createStore = () => {
 	const { subscribe, set, update } = writable([], function start (set) {
 		const localSchema = getLocalSchema();
 
-		if (!localSchema) {
-			getSchema()
+		localSchema
+			? set(localSchema)
+			: getSchema()
 				.then(schema => addCheckedPropertyForBoards(schema))
 				.then(schema => set(schema))
 				.catch(error => console.error(error));
-		} else {
-			set(localSchema);
-		}
 
-		return function stop () {}
+		return () => set(0);
 	});
 
 	return {
 		subscribe,
-		toggleCheckedOfBoard (vendorName, boardName) {
+
+		// Toggle checked state for board of vendor
+		toggleCheckedOfBoard ({ vendorName, boardName })  {
 			update(schema => {
 				const newSchema = schema.map(vendor => {
 					if (vendor.name !== vendorName) return vendor;
@@ -67,7 +64,7 @@ function createSchema() {
 				return newSchema;
 			});
 		}
-	};
-}
+	}
+};
 
-export const schema = createSchema();
+export const schema = createStore();
