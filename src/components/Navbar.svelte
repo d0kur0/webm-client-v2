@@ -37,11 +37,7 @@
 		{#if themeToggler}
 			<div class="navbar__pull-right">
 				<button class="button button--circle" on:click={toggleTheme}>
-					{#if $theme}
-						<ion-icon name="sunny-outline"></ion-icon>
-					{:else}
-						<ion-icon name="moon-outline"></ion-icon>
-					{/if}
+					<ion-icon name="{['sunny-outline', 'moon-outline'][+!$theme]}"></ion-icon>
 				</button>
 			</div>
 		{/if}
