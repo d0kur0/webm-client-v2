@@ -1,3 +1,5 @@
+/* Light colors */
+
 body {
   --background-color: #121212;
   --main-color: #fff;
@@ -14,6 +16,8 @@ body {
   --spinner-color: rgba(255, 35, 206, 0.76);
 }
 
+/* Dark colors */
+
 body.dark {
     --background-color: #f3f3f3;
     --main-color: #4a4a4a;
@@ -29,13 +33,16 @@ body.dark {
     --spinner-color: rgba(255, 35, 206, 0.76);
 }
 
-/* fix for artifacts with toggle theme */
-.transition nav {
-  background-color: transparent;
-}
+/* Utility class for animate theme toggling */
 
 .transition {
   transition: 0.5s !important;
+}
+
+/* Fixes for artifacts with toggle theme */
+
+.transition nav {
+  background-color: transparent;
 }
 
 .transition * {

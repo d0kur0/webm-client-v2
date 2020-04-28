@@ -1,6 +1,10 @@
+/* Navbar, empty block for make space of sticky navbar */
+
 .navbar-top-margin {
   height: 60px;
 }
+
+/* Navbar */
 
 .navbar {
   background-color: var(--background-color);
@@ -12,29 +16,35 @@
   align-items: center;
   padding: 0 20px;
   height: 60px;
+}
 
-  &__pull-left,
-  &__pull-right {
-    display: flex;
-    align-items: center;
-  }
+/* Navbar pull left */
 
-  &__pull-left {
-    margin-right: auto;
-  }
+.navbar__pull-left {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
 
-  &__pull-right {
-    margin-left: auto;
-  }
+/* Navbar pull right */
 
-  &__video-name {
-    font-size: 1.2em;
-    padding-left: 15px;
+.navbar__pull-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
 
-    &-wrapper {
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-  }
+/* Navbar video name */
+
+.navbar__video-name {
+  font-size: 1.2em;
+  padding-left: 15px;
+}
+
+/* Navbar video name wrapper */
+
+.navbar__video-name-wrapper {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
