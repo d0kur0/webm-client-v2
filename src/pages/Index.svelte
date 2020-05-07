@@ -10,18 +10,22 @@
     onMount(async () => {
         await videos.fetchBySchema($schema);
     });
+
+    $: videoName = $videos.files[$videos.currentIndex] 
+                  ? $videos.files[$videos.currentIndex].name 
+                  : "...";
 </script>
 
 <template>
-  <Navbar linkUrl="/settings" linkIcon="settings-outline" videoName="RandomName.webm" />
+  <Navbar linkUrl="/settings" linkIcon="settings-outline" videoName="{videoName}" />
 
-  <div class="page-wrapper">
-    {#if $videos.files.length}
-	    <Player />
+  {#if $videos.files.length}
+    <Player />
   {:else}
-    <div class="loading-bar">
-      <ion-icon name="aperture-outline"></ion-icon>
+   <div class="page-wrapper">
+      <div class="loading-bar">
+        <ion-icon name="aperture-outline"></ion-icon>
+      </div>
     </div>
   {/if}
-  </div>
 </template>
