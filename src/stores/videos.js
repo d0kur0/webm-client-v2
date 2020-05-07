@@ -24,7 +24,11 @@ const createStore = () => {
 		// Requesting files by schema
 		async fetchBySchema (schema) {
 			const files = await getFilesBySchema(schema) || [];
-			return update(oldState => ({ ...oldState, files }));
+
+			return update(oldState => ({ 
+				...oldState, 
+				files: shuffleArray(files)
+			}));
 		}
 	}
 };
