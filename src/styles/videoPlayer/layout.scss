@@ -1,0 +1,29 @@
+/* Player container */
+
+.player {
+	width: 1024px;
+	height: 600px;
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+	position: relative;
+	background-color: var(--player-pale);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Player container focused state */
+
+.player:focus {
+	box-shadow: 0px 0px 4px 2px var(--player-focus-color);
+	outline: none;
+}
+
+/* Video element */
+
+.player video {
+	height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+}

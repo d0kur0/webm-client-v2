@@ -25,16 +25,36 @@
 .button:active {
   outline: none;
   color: var(--button-active-color);
+  background-color: var(--button-active-background);
 }
 
 /* Button circle */
 
 .button--circle {
+  padding: 5px;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .button--circle ion-icon {
   font-size: 1.4em;
+}
+
+/* Button in player */
+
+.button--player {
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: var(--player-button-color);
+}
+
+.button--player:hover {
+  color: var(--player-button-hover-color);
+}
+
+.button--player:focus {
+  background-color: var(--player-button-background-color);
 }
