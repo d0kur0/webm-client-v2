@@ -28,7 +28,9 @@ const unpackFiles = vendors => {
 // Requesting files by schema, return files array
 export const getFilesBySchema = async (inputSchema) => {
 	const schema = { vendors: {} };
-	inputSchema.forEach(vendor => schema.vendors[vendor.name] = vendor.boards.map(board => board.name));
+	inputSchema.forEach(vendor => {
+		schema.vendors[vendor.name] = vendor.boards.filter(board => board.checked).map(board => board.name)
+	});
 
 	const { data } = await API.post("files/getByStruct", JSON.stringify(schema));
 
