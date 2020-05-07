@@ -24,22 +24,16 @@
 	<div class="navbar-top-margin"></div>
 
 	<nav class="navbar">
-		<div class="navbar__pull-left">
-			<a href="{linkUrl}" use:link class="button button--circle">
-				<ion-icon name="{linkIcon}"></ion-icon>
-			</a>
+		<a href="{linkUrl}" use:link class="navbar__button button button--circle">
+			<ion-icon name="{linkIcon}"></ion-icon>
+		</a>
 
-			<div class="navbar__video-name">
-				<span class="navbar__video-name-wrapper">{videoName}</span>
-			</div>
-		</div>
+		<div class="navbar__video-name">{videoName}</div>
 
 		{#if themeToggler}
-			<div class="navbar__pull-right">
-				<button class="button button--circle" on:click={toggleTheme}>
-					<ion-icon name="{['sunny-outline', 'moon-outline'][+!$theme]}"></ion-icon>
-				</button>
-			</div>
+			<button class="navbar__button button button--circle" on:click={toggleTheme}>
+				<ion-icon name="{['sunny-outline', 'moon-outline'][+$theme]}"></ion-icon>
+			</button>
 		{/if}
 	</nav>
 </template>
