@@ -6,6 +6,7 @@
 	width: var(--track-width);
 	height: var(--track-height);
 	background: var(--track-background);
+	border-radius: 5px;
 	
 	@if $fill == 1 {
 		& {
@@ -54,6 +55,10 @@
 .slider [type="range"] {
 	&:focus {
 		outline: none;
+	}
+
+	&:disabled {
+		opacity: 0.5;
 	}
 
 	&, &::-webkit-slider-thumb {
