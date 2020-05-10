@@ -29,6 +29,7 @@
 	@import "./styles/button.scss";
 	@import "./styles/checkbox-list.scss";
 	@import "./styles/loading.scss";
+	@import "./styles/notification.scss";
 
 	@import "./styles/videoPlayer/layout.scss";
 	@import "./styles/videoPlayer/slider.scss";
