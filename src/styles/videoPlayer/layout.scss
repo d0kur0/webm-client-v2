@@ -20,10 +20,40 @@
 	outline: none;
 }
 
+/* Player load spinner */
+
+.player-loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
 /* Video element */
 
 .player video {
 	height: 100%;
 	max-width: 100%;
 	object-fit: contain;
+}
+
+@media (hover: none) and (pointer: fine), (hover: none) and (pointer: coarse) {
+	.player:focus {
+		box-shadow: none;
+	}
+
+	.player {
+		max-height: calc(100vh - 60px);
+	}
+
+	.player-loading {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.player-loading ion-icon {
+		font-size: 5.0em;
+	}
 }
