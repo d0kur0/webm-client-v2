@@ -29,6 +29,32 @@ const createStore = () => {
 				...oldState, 
 				files: shuffleArray(files)
 			}));
+		},
+
+		// Increment currentIndex
+		nextFile () {
+			update(oldState => {
+				if (oldState.currentIndex + 1 >= oldState.files.length)
+					return oldState;
+
+				return {
+					...oldState,
+					currentIndex: oldState.currentIndex + 1
+				};
+			});
+		},
+
+		// Decrement currentIndex
+		previousFile () {
+			update(oldState => {
+				if (oldState.currentIndex - 1 < 0)
+					return oldState;
+
+				return {
+					...oldState,
+					currentIndex: oldState.currentIndex - 1
+				};
+			});
 		}
 	}
 };
