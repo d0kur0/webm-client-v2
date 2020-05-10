@@ -30,18 +30,7 @@ const setLocalSchema = schema => {
 
 // Fabric of store
 const createStore = () => {
-	const { subscribe, set, update } = writable([], function start (set) {
-		const localSchema = getLocalSchema();
-
-		localSchema
-			? set(localSchema)
-			: getSchema()
-				.then(schema => addCheckedPropertyForBoards(schema))
-				.then(schema => set(schema))
-				.catch(error => console.error(error));
-
-		return () => set(0);
-	});
+	const { subscribe, set, update } = writable([]);
 
 	return {
 		subscribe,
@@ -62,7 +51,32 @@ const createStore = () => {
 
 				setLocalSchema(newSchema);
 				return newSchema;
-			});
+			})
+		},
+
+		// Getting schema
+		async fetch () {
+			const localSchema = getLocalSchema();
+
+			if (localSchema) {
+				set(localSchema);
+			} else {
+				let schema = await getSchema();
+				schema = addCheckedPropertyForBoards(schema);
+
+				setLocalSchema(schema);
+				set(schema);
+			}
+		},
+
+		// Check case then all boards disable
+		isAllDisable () {
+			const schema = getLocalSchema();
+			if (!schema.length) return true;
+
+			const checkedList = schema.map(vendor => vendor.boards).flat().filter(board => board.checked);
+			
+			return !Boolean(checkedList.length);
 		}
 	}
 };
