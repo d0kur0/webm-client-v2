@@ -51,10 +51,26 @@
   color: var(--player-button-color);
 }
 
+/* Button in player hover state */
+
 .button--player:hover {
   color: var(--player-button-hover-color);
 }
 
+/* Button player icons stroke width */
+.button--player ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+/* Button in player focus state */
+
 .button--player:focus {
-  background-color: var(--player-button-background-color);
+  color: var(--player-button-background-color);
+  background-color: transparent;
+}
+
+/* Button in player disabled state */
+
+.button--player:disabled {
+  opacity: 0.5;
 }
