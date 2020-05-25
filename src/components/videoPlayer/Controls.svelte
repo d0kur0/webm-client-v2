@@ -28,14 +28,15 @@
 
 	// Function for toggle fullscreen mode
 	const toggleFullScreen = event => {
-		if ($playerUI.isFullscreen) {
-			document.exitFullscreen();
-		} else {
-			$playerUI.playerElement.requestFullscreen();
-		}
-
-		$playerUI.isFullscreen = !$playerUI.isFullscreen;
+		$playerUI.isFullscreen 
+			? document.exitFullscreen()
+			: $playerUI.playerElement.requestFullscreen();
 	};
+
+	// Watch fullscreen change and update UI state
+	document.addEventListener("fullscreenchange", () => {
+		$playerUI.isFullscreen = !$playerUI.isFullscreen;
+	});
 
 	// Function for toggle volume (0 <-> last value)
 	const toggleVolume = event => {
