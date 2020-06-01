@@ -1,89 +1,93 @@
 /* Light colors */
 
 body {
-	--background-color: #f3f3f3;
-	--main-color: #4a4a4a;
-	--wrapper-color: #e8e8e8;
+  --background-color: #f3f3f3;
+  --main-color: #4a4a4a;
+  --wrapper-color: #e8e8e8;
 
-	--focus-color: #cecece;
-	--hover-color: #d6d6d6;
+  --focus-color: #cecece;
+  --hover-color: #d6d6d6;
 
-	--input-border-color: rgba(123, 123, 123, 0.56);
-	--border-devider-color: rgba(146, 146, 146, 0.36);
-	--ancent-color: rgba(35, 148, 255);
+  --input-border-color: rgba(123, 123, 123, 0.56);
+  --border-devider-color: rgba(146, 146, 146, 0.36);
+  --ancent-color: rgba(35, 148, 255);
 
-	--button-color: #545454;
-	--button-hover-color: #2f2f2f;
-	--button-active-color: #fff;
-	--button-active-background: #a7a7a7;
+  --button-color: #545454;
+  --button-hover-color: #2f2f2f;
+  --button-active-color: #fff;
+  --button-active-background: #a7a7a7;
 
-	--spinner-color: rgba(35, 148, 255);
+  --spinner-color: rgba(35, 148, 255);
 
-	--player-pale: #000;
-	--player-focus-color: rgba(35, 148, 255, 0.76);
+  --player-pale: #000;
+  --player-focus-color: rgba(35, 148, 255, 0.76);
 
-	--player-button-color: #fff;
-	--player-text-color: #fff;
-	--player-button-hover-color: #d0d0d0;
-	--player-button-background-color: rgba(35, 148, 255);
+  --player-button-color: #fff;
+  --player-text-color: #fff;
+  --player-button-hover-color: #d0d0d0;
+  --player-button-background-color: rgba(35, 148, 255);
 
-	--thumb-color: white;
-	--track-background: #b9b9b9;
-	--fill-color: #ffffff;
+  --thumb-color: white;
+  --track-background: #b9b9b9;
+  --fill-color: #ffffff;
 
-	--notification-color: #fff;
-	--notification-background: rgba(0, 0, 0, 0.5);
+  --notification-color: #fff;
+  --notification-background: rgba(0, 0, 0, 0.5);
+
+  --swipe-color: rgba(35, 164, 255, 0.53);
 }
 
 /* Dark colors */
 
 body.dark {
-	--background-color: #121212;
-	--main-color: #fff;
-	--wrapper-color: #1a1b1e;
+  --background-color: #121212;
+  --main-color: #fff;
+  --wrapper-color: #1a1b1e;
 
-	--focus-color: #3f3f42;
-	--hover-color: #232427;
+  --focus-color: #3f3f42;
+  --hover-color: #232427;
 
-	--input-border-color: rgba(204, 204, 204, 0.56);
-	--border-devider-color: rgba(48, 48, 48, 0.36);
-	--ancent-color: rgba(35, 148, 255);
+  --input-border-color: rgba(204, 204, 204, 0.56);
+  --border-devider-color: rgba(48, 48, 48, 0.36);
+  --ancent-color: rgba(35, 148, 255);
 
-	--button-color: #f2f2f2;
-	--button-hover-color: #bfbfbf;
-	--button-active-color: #fff;
-	--button-active-background: #656565;
+  --button-color: #f2f2f2;
+  --button-hover-color: #bfbfbf;
+  --button-active-color: #fff;
+  --button-active-background: #656565;
 
-	--spinner-color: rgba(35, 148, 255);
+  --spinner-color: rgba(35, 148, 255);
 
-	--player-pale: #000;
-	--player-focus-color: rgba(35, 148, 255, 0.76);
+  --player-pale: #000;
+  --player-focus-color: rgba(35, 148, 255, 0.76);
 
-	--player-button-color: #fff;
-	--player-text-color: #fff;
-	--player-button-hover-color: #d0d0d0;
-	--player-button-background-color: rgba(35, 148, 255);
+  --player-button-color: #fff;
+  --player-text-color: #fff;
+  --player-button-hover-color: #d0d0d0;
+  --player-button-background-color: rgba(35, 148, 255);
 
-	--thumb-color: white;
-	--track-background: #b9b9b9;
-	--fill-color: #ffffff;
+  --thumb-color: white;
+  --track-background: #b9b9b9;
+  --fill-color: #ffffff;
 
-	--notification-color: #fff;
-	--notification-background: rgba(0, 0, 0, 0.5);
+  --notification-color: #fff;
+  --notification-background: rgba(0, 0, 0, 0.5);
+
+  --swipe-color: rgba(35, 164, 255, 0.53);
 }
 
 /* Utility class for animate theme toggling */
 
 .transition {
-	transition: 0.5s !important;
+  transition: 0.5s !important;
 }
 
 /* Fixes for artifacts with toggle theme */
 
 .transition nav {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .transition * {
-	transition: 0s !important;
+  transition: 0s !important;
 }
