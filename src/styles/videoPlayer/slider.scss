@@ -1,105 +1,126 @@
 /* Mixin for style track */
 
 @mixin track($fill: 0) {
-	box-sizing: border-box;
-	border: none;
-	width: var(--track-width);
-	height: var(--track-height);
-	background: var(--track-background);
-	border-radius: 5px;
-	
-	@if $fill == 1 {
-		& {
-			background: linear-gradient(var(--fill-color), var(--fill-color))
-				0/ var(--sx) 100% no-repeat var(--track-background)
-		}
-	}
+  box-sizing: border-box;
+  border: none;
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--track-background);
+  border-radius: 5px;
+
+  @if $fill == 1 {
+    & {
+      background: linear-gradient(var(--fill-color), var(--fill-color))
+        0 /
+        var(--sx)
+        100%
+        no-repeat
+        var(--track-background);
+    }
+  }
 }
 
 /* Mixin for fill track */
 
 @mixin fill() {
-	height: var(--track-height);
-	background: var(--fill-color)
+  height: var(--track-height);
+  background: var(--fill-color);
 }
 
 /* Mixin for style thumb */
 
 @mixin thumb() {
-	box-sizing: border-box;
-	border: none;
-	width: var(--thumb-diameter);
-	height: var(--thumb-diameter);
-	border-radius: 50%;
-	background: var(--thumb-color);
+  box-sizing: border-box;
+  border: none;
+  width: var(--thumb-diameter);
+  height: var(--thumb-diameter);
+  border-radius: 50%;
+  background: var(--thumb-color);
 }
 
 /* Slider */
 
 .slider {
-	--track-width: 100%;
-	--track-height: .25em;
-	--thumb-diameter: 0.8em;
-	
-	--range: calc(var(--max) - var(--min));
-	--ratio: calc((var(--val) - var(--min)) / var(--range));
-	--sx: calc(.5 * var(--thumb-diameter) + var(--ratio) * (100% - var(--thumb-diameter)));
+  --track-width: 100%;
+  --track-height: 0.35em;
+  --thumb-diameter: 0.8em;
+
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--val) - var(--min)) / var(--range));
+  --sx: calc(
+    0.5 * var(--thumb-diameter) + var(--ratio) * (100% - var(--thumb-diameter))
+  );
 
   width: var(--track-width);
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* Slider input */
 
 .slider [type="range"] {
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 
-	&:disabled {
-		opacity: 0.5;
-	}
+  &:disabled {
+    opacity: 0.5;
+  }
 
-	&, &::-webkit-slider-thumb {
-		-webkit-appearance: none;
-	}
-	
-	margin: 0;
-	width: var(--track-width);
-	height: var(--thumb-diameter);
-	background: transparent;
-	font: 1em/1 arial, sans-serif;
-	cursor: pointer;
-	padding: 0px 5px;
-	border-radius: 100px;
-	
-	&::-webkit-slider-runnable-track { @include track(1) }
-	&:focus::-webkit-slider-runnable-track {
-		box-shadow: 0px 0px 4px 2px var(--player-focus-color);
-	}
+  &,
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
 
-	&::-moz-range-track { @include track }
-	&::-ms-track { @include track }
-	&:focus::-moz-range-track {
-		box-shadow: 0px 0px 4px 2px var(--player-focus-color);
-	}
-	&:focus::-ms-track {
-		box-shadow: 0px 0px 4px 2px var(--player-focus-color);
-	}
-	
-	&::-moz-range-progress { @include fill }
-	&::-ms-fill-lower { @include fill }
-	
-	&::-webkit-slider-thumb {
-		margin-top: calc(.5*(var(--track-height) - var(--thumb-diameter)));
-		@include thumb
-	}
-	&::-moz-range-thumb { @include thumb }
-	&::-ms-thumb {
-		margin-top: 0;
-		@include thumb
-	}
-	
-	&::-ms-tooltip { display: none }
+  margin: 0;
+  width: var(--track-width);
+  height: var(--thumb-diameter);
+  background: transparent;
+  font: 1em/1 arial, sans-serif;
+  cursor: pointer;
+  padding: 0px 5px;
+  border-radius: 100px;
+
+  &::-webkit-slider-runnable-track {
+    @include track(1);
+  }
+  &:focus::-webkit-slider-runnable-track {
+    box-shadow: 0px 0px 4px 2px var(--player-focus-color);
+  }
+
+  &::-moz-range-track {
+    @include track;
+  }
+  &::-ms-track {
+    @include track;
+  }
+  &:focus::-moz-range-track {
+    box-shadow: 0px 0px 4px 2px var(--player-focus-color);
+  }
+  &:focus::-ms-track {
+    box-shadow: 0px 0px 4px 2px var(--player-focus-color);
+  }
+
+  &::-moz-range-progress {
+    @include fill;
+  }
+  &::-ms-fill-lower {
+    @include fill;
+  }
+
+  &::-webkit-slider-thumb {
+    margin-top: calc(0.5 * (var(--track-height) - var(--thumb-diameter)));
+    @include thumb;
+  }
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+  &::-ms-thumb {
+    margin-top: 0;
+    @include thumb;
+  }
+
+  &::-ms-tooltip {
+    display: none;
+  }
 }
