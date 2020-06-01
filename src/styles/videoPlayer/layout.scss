@@ -1,59 +1,67 @@
 /* Player container */
 
 .player {
-	width: 1024px;
-	height: 600px;
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-	position: relative;
-	background-color: var(--player-pale);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 1024px;
+  height: 600px;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: var(--player-pale);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-swipe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* Player container focused state */
 
 .player:focus {
-	box-shadow: 0px 0px 4px 2px var(--player-focus-color);
-	outline: none;
+  box-shadow: 0px 0px 4px 2px var(--player-focus-color);
+  outline: none;
 }
 
 /* Player load spinner */
 
 .player-loading {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 /* Video element */
 
 .player video {
-	height: 100%;
-	max-width: 100%;
-	object-fit: contain;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 @media (hover: none) and (pointer: fine), (hover: none) and (pointer: coarse) {
-	.player:focus {
-		box-shadow: none;
-	}
+  .player:focus {
+    box-shadow: none;
+  }
 
-	.player {
-		max-height: calc(100vh - 60px);
-	}
+  .player {
+    max-height: calc(100vh - 60px);
+  }
 
-	.player-loading {
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
-	}
+  .player-loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 
-	.player-loading ion-icon {
-		font-size: 5.0em;
-	}
+  .player-loading ion-icon {
+    font-size: 5em;
+  }
 }
