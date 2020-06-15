@@ -25,18 +25,18 @@ const createStore = () => {
     toggleControls() {
       update((store) => {
         const timeoutHandler = () => {
-          const rects = store.playerElement &&
-            store.playerElement.getBoundingClientRect();
-          if (!rects) return;
+          const elementFromPoints = document.elementFromPoint(
+            window.mousePosition.X,
+            window.mousePosition.Y
+          );
 
-          const isMouseOnControls = (window.mousePosition.X >= rects.x &&
-            window.mousePosition.X <= rects.x + rects.width) &&
-            (window.mousePosition.Y >= rects.y &&
-              window.mousePosition.Y >= rects.y + rects.height);
+          const isMouseOnControls = elementFromPoints
+            ? elementFromPoints.closest(".controls")
+            : false;
 
           const isTouch = matchMedia(
-            "(hover: none) and (pointer: fine), (hover: none) and (pointer: coarse)",
-          );
+            "(hover: none) and (pointer: fine), (hover: none) and (pointer: coarse)"
+          ).matches;
 
           if (isMouseOnControls && !isTouch) {
             store.showControlsTimeout = setTimeout(timeoutHandler, 2500);
