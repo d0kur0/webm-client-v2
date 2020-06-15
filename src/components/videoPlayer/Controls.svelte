@@ -12,7 +12,7 @@
   $: isFirstVideo = $videos.currentIndex === 0;
 
   // Function for format seconds in format: mm:ss
-  const formatTime = seconds => {
+  const formatTime = (seconds) => {
     if (isNaN(seconds)) return "...";
     const minutes = Math.floor(seconds / 60);
     seconds = Math.floor(seconds % 60);
@@ -27,14 +27,14 @@
   }
 
   // Function for toggle fullscreen mode
-  const toggleFullScreen = event => {
+  const toggleFullScreen = (event) => {
     $playerUI.isFullscreen
       ? document.exitFullscreen()
       : $playerUI.playerElement.requestFullscreen();
   };
 
   // Function for toggle volume (0 <-> last value)
-  const toggleVolume = event => {
+  const toggleVolume = (event) => {
     if (!$playerVolume) {
       $playerVolume = sessionStorage.latestVolume;
     } else {
