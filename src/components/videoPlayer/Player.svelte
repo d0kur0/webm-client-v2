@@ -122,7 +122,7 @@
         on:loadstart={event => (isLoading = true)}
         on:canPlay={event => (isLoading = false)}
         on:loadeddata={event => (isLoading = false)}
-        src={currentVideo.path} />
+        src={currentVideo.path}></video>
     {/if}
 
     {#if !$schema.length || schema.isAllDisable()}

@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Make base API instance for requests
 const API = axios.create({
-	baseURL: process.env.API_GATEWAY,
+	baseURL: process ? process.env.API_GATEWAY : "",
 	responseType: "json"
 });
 
