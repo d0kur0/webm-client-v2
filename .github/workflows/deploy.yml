@@ -25,4 +25,4 @@ jobs:
       - run: npm install
       - run: API_GATEWAY=${{ secrets.API_GATEWAY }} npm run build
       # Deploy
-      - run: cd public && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOSTNAME }}:${{ secrets.TARGET_PATH }}
+      - run: cd public && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress . ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOSTNAME }}:${{ secrets.DEPLOY_TARGET_PATH }}
