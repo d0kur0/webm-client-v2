@@ -22,7 +22,7 @@ jobs:
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build
-      - run: npm install
+      - run: npm i
       - run: API_GATEWAY=${{ secrets.API_GATEWAY }} npm run build
       # Deploy
       - run: cd public && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOSTNAME }}:${{ secrets.TARGET_PATH }}
