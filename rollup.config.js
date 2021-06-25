@@ -27,16 +27,16 @@ export default {
 			extensions: ['.js', '.css', '.scss', '.svelte'],
 		}),
 
-		svelte({
-			preprocess: autoPreprocess({ /* options */ }),
-			// enable run-time checks when not in production
-			dev: !production
-		}),
-
 		replace({
 			'process.env.API_GATEWAY': process.env.API_GATEWAY,
 			__buildDate__: () => JSON.stringify(new Date()),
 			__buildVersion: 15
+		}),
+
+		svelte({
+			preprocess: autoPreprocess({ /* options */ }),
+			// enable run-time checks when not in production
+			dev: !production
 		}),
 
 		// If you have external dependencies installed from
