@@ -18,6 +18,16 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		replace({
+			preventAssignment: true,
+			__app: JSON.stringify({
+				env: {
+					isProd: production,
+					API_URL : process.env.API_GATEWAY
+				}
+			})
+		}),
+
 		rootImport({
 			// Will first look in `client/src/*` and then `common/src/*`.
 			root: `${__dirname}/src`,
@@ -31,13 +41,6 @@ export default {
 			preprocess: autoPreprocess({ /* options */ }),
 			// enable run-time checks when not in production
 			dev: !production
-		}),
-
-		replace({
-			preventAssignment: true,
-			'process.env.API_GATEWAY': process.env.API_GATEWAY,
-			__buildDate__: () => JSON.stringify(new Date()),
-			__buildVersion: 15
 		}),
 
 		// If you have external dependencies installed from

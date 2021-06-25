@@ -2,11 +2,9 @@ import axios from "axios";
 
 // Make base API instance for requests
 const API = axios.create({
-	baseURL: process ? process.env.API_GATEWAY : "",
+	baseURL: __app.env.API_URL,
 	responseType: "json"
 });
-
-console.log(process.env.API_GATEWAY)
 
 // Unpack layered object to flat array
 const unpackFiles = vendors => {
