@@ -28,6 +28,7 @@ export default {
 		}),
 
 		replace({
+			preventAssignment: true,
 			'process.env.API_GATEWAY': process.env.API_GATEWAY,
 			__buildDate__: () => JSON.stringify(new Date()),
 			__buildVersion: 15
