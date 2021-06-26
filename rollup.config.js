@@ -18,6 +18,15 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		rootImport({
+			// Will first look in `client/src/*` and then `common/src/*`.
+			root: `${__dirname}/src`,
+			useInput: 'prepend',
+
+			// If we don't find the file verbatim, try adding these extensions
+			extensions: ['.js', '.css', '.scss', '.svelte'],
+		}),
+
 		replace({
 			preventAssignment: true,
 			__app: JSON.stringify({
@@ -26,15 +35,6 @@ export default {
 					API_URL : process.env.API_GATEWAY
 				}
 			})
-		}),
-
-		rootImport({
-			// Will first look in `client/src/*` and then `common/src/*`.
-			root: `${__dirname}/src`,
-			useInput: 'prepend',
-
-			// If we don't find the file verbatim, try adding these extensions
-			extensions: ['.js', '.css', '.scss', '.svelte'],
 		}),
 
 		svelte({
